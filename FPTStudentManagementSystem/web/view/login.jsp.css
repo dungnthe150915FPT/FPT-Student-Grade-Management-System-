@@ -3,10 +3,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to c
 Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
 */
 /* 
-    Created on : May 28, 2022, 11:23:45 AM
+    Created on : Jun 2, 2022, 4:07:39 PM
     Author     : Dell
 */
-
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700|Poppins:400,500&display=swap');
 *{
   margin: 0;
@@ -28,6 +27,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
   height: 100%;
   width: 100%;
   background: rgba(0,0,0,0.7);
+}
+.select{
+    width:100px;
 }
 .content{
   position: absolute;
@@ -104,7 +106,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
   font-family: 'Poppins',sans-serif;
 }
 .footer{
-    
     background-color: orange;
     padding-top: 10px;
 }
@@ -119,5 +120,3 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     padding-top: 10px;
     padding-bottom: 20px;
 }
-
-
