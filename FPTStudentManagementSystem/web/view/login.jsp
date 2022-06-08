@@ -28,9 +28,9 @@
                 <header>Login</header>
                 <img style="max-width: 300px; height: auto; padding-bottom: 50px;" src="https://cdn.123job.vn/123job/uploads/2021/04/07/2021_04_07______42727647a64b4710268dbce238dd7a55.png" alt=""/>
                 <form action="login" method="post">
-                    <select class="select">
-                        <option value="Student">Student</option>
-                        <option value="Manager">Manager</option>
+                    <select style="margin-bottom: 30px; width: 150px; height: 50px; font-size: 25px; margin-top: -25px;" class="select">
+                        <option value="Student" name="Student">Student</option>
+                        <option value="Manager" name="Manager">Manager</option>
                     </select>
                     <div class="field">
                         <span class="fa fa-user"></span>
