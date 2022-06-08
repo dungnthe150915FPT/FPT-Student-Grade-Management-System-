@@ -17,6 +17,7 @@
         }
     </style>
     <body>
+        <form action="attend" method="post">
         <table style="width:100%">
             <tr>
                 <th>Number</th>
@@ -30,7 +31,7 @@
             </tr>
             <c:forEach items="${requestScope.am}" var="am">
             <tr>
-                <td>${am.password}</td>
+                <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -41,5 +42,6 @@
             </tr>
         </table>
     </c:forEach>
+        </form>
 </body>
 </html>

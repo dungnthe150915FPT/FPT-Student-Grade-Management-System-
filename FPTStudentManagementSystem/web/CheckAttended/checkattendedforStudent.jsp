@@ -9,13 +9,14 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title></title>
     </head>
     <style>
         table, th, td {
             border:1px solid black;
         }
     </style>
+    <form action="attend" method="post">
     <body>
         <table style="width:100%">
             <tr>
@@ -28,15 +29,19 @@
                 <th>Subject</th>
                 <th>Date</th>
             </tr>
-    <c:forEach >
+            <c:forEach items="${requestScope.as}" var="as">
             <tr>
+                <td></td>
+                <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
                 <td><input type="checkbox"></td>
                 <td></td>
+                <td></td>
             </tr>
         </table>
     </c:forEach>
+    </form>
 </body>
 </html>
