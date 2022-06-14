@@ -10,7 +10,6 @@ import dal.Account_ManagerDBContext;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -19,7 +18,6 @@ import jakarta.servlet.http.HttpServletResponse;
  *
  * @author Dell
  */
-@WebServlet(name="LoginServlet", urlPatterns={"/LoginServlet"})
 public class LoginForManager extends HttpServlet {
    
     /** 
@@ -37,10 +35,10 @@ public class LoginForManager extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet LoginServlet</title>");  
+            out.println("<title>Servlet LoginForManager</title>");  
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet LoginServlet at " + request.getContextPath () + "</h1>");
+            out.println("<h1>Servlet LoginForManager at " + request.getContextPath () + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -75,9 +73,10 @@ public class LoginForManager extends HttpServlet {
         Account_ManagerDBContext amdb = new Account_ManagerDBContext();
         Account_Manager am = amdb.getAccount_Manager(username, password);
         if(am == null){
-            response.getWriter().println("Login Failed");
-        }else{
-            response.getWriter().print("Login successful! Welcome "+am.getDisplayname());
+            request.getRequestDispatcher("view/login.jsp").forward(request, response);
+        }if(am!=null){
+            response.sendRedirect("https://www.facebook.com/NgoTungSon");
+//            request.getRequestDispatcher("CheckAttended/checkattendedforManager.jsp").forward(request, response);
         }
     }
 

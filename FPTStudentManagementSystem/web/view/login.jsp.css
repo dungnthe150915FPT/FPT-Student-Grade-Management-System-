@@ -7,7 +7,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     Author     : Dell
 */
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700|Poppins:400,500&display=swap');
-*{
+/**{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -116,4 +116,4 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     color: white;
     padding-top: 10px;
     padding-bottom: 20px;
-}
+}*/
