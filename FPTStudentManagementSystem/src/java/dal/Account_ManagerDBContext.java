@@ -17,19 +17,19 @@ import java.util.logging.Logger;
  * @author Dell
  */
 public class Account_ManagerDBContext extends DBContext<Account_Manager>{
-    public Account_Manager getAccount_Manager(String Musername, String Mpassword){
+    public Account_Manager getAccount_Manager(String username, String password){
         try {
             String sql = "select username, [password], displayname from Account_Manager\n" +
                     "where username = ? and [password] = ?";
             PreparedStatement stm = connection.prepareStatement(sql);
-            stm.setString(1, Musername);
-            stm.setString(2, Mpassword);
+            stm.setString(1, username);
+            stm.setString(2, password);
             ResultSet rs = stm.executeQuery();
             if(rs.next()){
                 Account_Manager am = new Account_Manager();
-                am.setMusername(rs.getString("Musername"));
-                am.setMpassword(rs.getString("Mpassword"));
-                am.setMdisplayname(rs.getString("Mdisplayname"));
+                am.setUsername(rs.getString("username"));
+                am.setPassword(rs.getString("password"));
+                am.setDisplayname(rs.getString("displayname"));
                 return am;
             }
         } catch (SQLException ex) {

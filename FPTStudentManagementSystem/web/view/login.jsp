@@ -38,13 +38,13 @@
                     </div>
                     <div class="field space">
                         <span class="fa fa-lock"></span>
-                        <input type="password" class="pass-key" required placeholder="Password" name="password">
+                        <input type="password" class="pass-key" required placeholder="password" name="password">
                     </div>
                     <div class="pass">
                         <a href="#">Forgot Password?</a>
                     </div>
                     <div class="field">
-                        <input type="submit" value="LOGIN">
+                        <input type="submit" value="login">
                     </div>
                 </form>         
             </div>

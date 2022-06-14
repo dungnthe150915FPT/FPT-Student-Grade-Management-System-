@@ -9,31 +9,33 @@ package Model;
  * @author Dell
  */
 public class Account_Student {
-    private String Susername;
-    private String Spassword;
-    private String Sdisplayname;
+    private String username;
+    private String password;
+    private String displayname;
 
-    public String getSusername() {
-        return Susername;
+    public String getUsername() {
+        return username;
     }
 
-    public void setSusername(String Susername) {
-        this.Susername = Susername;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getSpassword() {
-        return Spassword;
+    public String getPassword() {
+        return password;
     }
 
-    public void setSpassword(String Spassword) {
-        this.Spassword = Spassword;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public String getSdisplayname() {
-        return Sdisplayname;
+    public String getDisplayname() {
+        return displayname;
     }
 
-    public void setSdisplayname(String Sdisplayname) {
-        this.Sdisplayname = Sdisplayname;
+    public void setDisplayname(String displayname) {
+        this.displayname = displayname;
     }
+
+    
 }

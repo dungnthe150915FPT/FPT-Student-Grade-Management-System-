@@ -2,6 +2,22 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/Dell/Documents/GitHub/FPT-Student-Management-System/FPTStudentManagementSystem/web/CheckAttended/checkattendedforManager.jsp</file>
+            <file>file:/C:/Users/Dell/Documents/GitHub/FPT-Student-Management-System/FPTStudentManagementSystem/src/java/dal/AttendDBContext.java</file>
+            <file>file:/C:/Users/Dell/Documents/GitHub/FPT-Student-Management-System/FPTStudentManagementSystem/src/java/Model/Account_Manager.java</file>
+            <file>file:/C:/Users/Dell/Documents/GitHub/FPT-Student-Management-System/FPTStudentManagementSystem/src/java/Controller/AttendController.java</file>
+            <file>file:/C:/Users/Dell/Documents/GitHub/FPT-Student-Management-System/FPTStudentManagementSystem/src/java/Controller/LoginForManager.java</file>
+            <file>file:/C:/Users/Dell/Documents/GitHub/FPT-Student-Management-System/FPTStudentManagementSystem/src/java/Controller/LoginForStudent.java</file>
+            <file>file:/C:/Users/Dell/Documents/GitHub/FPT-Student-Management-System/FPTStudentManagementSystem/src/java/Model/Account_Student.java</file>
+            <file>file:/C:/Users/Dell/Documents/GitHub/FPT-Student-Management-System/FPTStudentManagementSystem/src/java/Model/Attended.java</file>
+            <file>file:/C:/Users/Dell/Documents/GitHub/FPT-Student-Management-System/FPTStudentManagementSystem/web/view/login.jsp.css</file>
+            <file>file:/C:/Users/Dell/Documents/GitHub/FPT-Student-Management-System/FPTStudentManagementSystem/src/java/dal/Account_ManagerDBContext.java</file>
+            <file>file:/C:/Users/Dell/Documents/GitHub/FPT-Student-Management-System/FPTStudentManagementSystem/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/Dell/Documents/GitHub/FPT-Student-Management-System/FPTStudentManagementSystem/web/view/login.jsp</file>
+            <file>file:/C:/Users/Dell/Documents/GitHub/FPT-Student-Management-System/FPTStudentManagementSystem/src/java/dal/DBContext.java</file>
+            <file>file:/C:/Users/Dell/Documents/GitHub/FPT-Student-Management-System/FPTStudentManagementSystem/web/CheckAttended/checkattendedforStudent.jsp</file>
+            <file>file:/C:/Users/Dell/Documents/GitHub/FPT-Student-Management-System/FPTStudentManagementSystem/src/java/dal/Account_StudentDBContext.java</file>
+        </group>
     </open-files>
 </project-private>

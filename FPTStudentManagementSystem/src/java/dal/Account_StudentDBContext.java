@@ -15,19 +15,19 @@ import java.util.logging.Logger;
  * @author Dell
  */
 public class Account_StudentDBContext extends DBContext<Account_Student>{
-    public Account_Student getAccount_Student(String Susername, String Spassword){
+    public Account_Student getAccount_Student(String username, String password){
         try {
             String sql = "select username, [password], displayname from Account_Student\n" +
                     "where username = ? and [password] = ?";
             PreparedStatement stm = connection.prepareStatement(sql);
-            stm.setString(1, Susername);
-            stm.setString(2, Spassword);
+            stm.setString(1, username);
+            stm.setString(2, password);
             ResultSet rs = stm.executeQuery();
             if(rs.next()){
                 Account_Student as = new Account_Student();
-                as.setSusername(rs.getString("Susername"));
-                as.setSpassword(rs.getString("Spassword"));
-                as.setSdisplayname(rs.getString("Sdisplayname"));
+                as.setUsername(rs.getString("Susername"));
+                as.setPassword(rs.getString("Spassword"));
+                as.setDisplayname(rs.getString("Sdisplayname"));
                 return as;
             }
         } catch (SQLException ex) {

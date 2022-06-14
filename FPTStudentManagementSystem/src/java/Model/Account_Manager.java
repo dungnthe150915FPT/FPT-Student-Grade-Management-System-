@@ -9,31 +9,33 @@ package Model;
  * @author Dell
  */
 public class Account_Manager {
-    private String Musername;
-    private String Mpassword;
-    private String Mdisplayname;
+    private String username;
+    private String password;
+    private String displayname;
 
-    public String getMusername() {
-        return Musername;
+    public String getUsername() {
+        return username;
     }
 
-    public void setMusername(String Musername) {
-        this.Musername = Musername;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getMpassword() {
-        return Mpassword;
+    public String getPassword() {
+        return password;
     }
 
-    public void setMpassword(String Mpassword) {
-        this.Mpassword = Mpassword;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public String getMdisplayname() {
-        return Mdisplayname;
+    public String getDisplayname() {
+        return displayname;
     }
 
-    public void setMdisplayname(String Mdisplayname) {
-        this.Mdisplayname = Mdisplayname;
+    public void setDisplayname(String displayname) {
+        this.displayname = displayname;
     }
+
+    
 }

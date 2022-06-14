@@ -57,7 +57,7 @@ public class LoginForManager extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        request.getRequestDispatcher("..view/login.jsp").forward(request, response);
+        request.getRequestDispatcher("view/login.jsp").forward(request, response);
     } 
 
     /** 
@@ -77,7 +77,7 @@ public class LoginForManager extends HttpServlet {
         if(am == null){
             response.getWriter().println("Login Failed");
         }else{
-            response.getWriter().print("Login successful! Welcome "+am.getMdisplayname());
+            response.getWriter().print("Login successful! Welcome "+am.getDisplayname());
         }
     }
 
