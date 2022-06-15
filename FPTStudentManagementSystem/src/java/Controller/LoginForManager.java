@@ -75,8 +75,8 @@ public class LoginForManager extends HttpServlet {
         if(am == null){
             request.getRequestDispatcher("view/login.jsp").forward(request, response);
         }if(am!=null){
-            response.sendRedirect("https://www.facebook.com/NgoTungSon");
-//            request.getRequestDispatcher("CheckAttended/checkattendedforManager.jsp").forward(request, response);
+//            response.sendRedirect("https://www.facebook.com/NgoTungSon");
+            request.getRequestDispatcher("CheckAttended/checkattendedforManager.jsp").forward(request, response);
         }
     }
 

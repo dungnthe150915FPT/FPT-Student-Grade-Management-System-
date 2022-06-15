@@ -11,7 +11,6 @@
         <title>Student Grade Management System</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="login.jsp.css" rel="stylesheet" type="text/css"/>
         <style>
             body{
                 background-image: url("https://daihoc.fpt.edu.vn/wp-content/uploads/2019/10/nha-alpha.jpg");
@@ -117,7 +116,8 @@
 }
 .footer{
     background-color: orange;
-    padding-top: 10px;
+    text-align: center;
+    padding-bottom: 0px;    
 }
 .footer p{
     text-align: center;
@@ -161,7 +161,6 @@
             </div>
         </div>
         <div class= "footer">
-
             <p>Email : daihocfpt@fpt.edu.vn</p>
             <p>Address: Khu Giáo dục và Đào tạo – Khu Công nghệ cao Hòa Lạc – Km29 Đại lộ Thăng Long, H. Thạch Thất, TP. Hà Nội</p>
             <p>Phone: 024 7300 1866</p>

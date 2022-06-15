@@ -4,10 +4,14 @@
  */
 package Model;
 
+import java.sql.Date;
+
 /**
  *
  * @author Dell
  */
-public class Attend {
-    private String 
+public class Class {
+    private ;
+    private Date date;
+    private 
 }
