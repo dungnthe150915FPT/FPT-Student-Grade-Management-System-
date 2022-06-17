@@ -115,14 +115,19 @@
   font-family: 'Poppins',sans-serif;
 }
 .footer{
-    background-color: orange;
-    text-align: center;
-    padding-bottom: 0px;    
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: orange;
+   color: white;
+   text-align: center;
+   margin-bottom: -20px;
 }
 .footer p{
     text-align: center;
     color: white;
-    padding: 10px 0;
+    padding: 5px 0;
 }
 .footer h5{
     text-align: center;
@@ -130,7 +135,6 @@
     padding-top: 10px;
     padding-bottom: 20px;
 }
-
         </style>
     </head>
     <body>
@@ -155,15 +159,14 @@
                         <a href="#">Forgot Password?</a>
                     </div>
                     <div class="field">
-                        <input type="submit" value="login">
+                        <input type="submit" value="Login">
                     </div>
                 </form>         
             </div>
         </div>
         <div class= "footer">
-            <p>Email : daihocfpt@fpt.edu.vn</p>
+            <p>Email : daihocfpt@fpt.edu.vn &emsp; Phone: 024 7300 1866</p>
             <p>Address: Khu Giáo dục và Đào tạo – Khu Công nghệ cao Hòa Lạc – Km29 Đại lộ Thăng Long, H. Thạch Thất, TP. Hà Nội</p>
-            <p>Phone: 024 7300 1866</p>
             <h5>&copy; Copyright 2022. Nguyễn Tuấn Dũng</h5>
         </div>
     </body>
