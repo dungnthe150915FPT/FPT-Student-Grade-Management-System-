@@ -5,20 +5,21 @@
 
 package Controller;
 
-import Model.Account_Manager;
-import dal.Account_ManagerDBContext;
+import Model.Term;
+import dal.TermDBContext;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 
 /**
  *
  * @author Dell
  */
-public class LoginForManager extends HttpServlet {
+public class TermController extends HttpServlet {
    
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -35,10 +36,10 @@ public class LoginForManager extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet LoginForManager</title>");  
+            out.println("<title>Servlet TermController</title>");  
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet LoginForManager at " + request.getContextPath () + "</h1>");
+            out.println("<h1>Servlet TermController at " + request.getContextPath () + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -55,7 +56,12 @@ public class LoginForManager extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        request.getRequestDispatcher("view/login.jsp").forward(request, response);
+//        int year = Integer.parseInt(request.getParameter("year"));
+//        String term = request.getParameter("term");
+        TermDBContext tdb = new TermDBContext();
+        ArrayList<Term> terms = tdb.getTerm();
+        request.setAttribute("terms", terms);
+        request.getRequestDispatcher("view/term.jsp").forward(request, response);
     } 
 
     /** 
@@ -68,16 +74,7 @@ public class LoginForManager extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        Account_ManagerDBContext amdb = new Account_ManagerDBContext();
-        Account_Manager am = amdb.getAccount_Manager(username, password);
-        if(am == null){
-            request.getRequestDispatcher("view/login.jsp").forward(request, response);
-        }if(am!=null){
-//            response.sendRedirect("https://www.facebook.com/NgoTungSon");
-            request.getRequestDispatcher("view/term.jsp").forward(request, response);
-        }
+//        request.getRequestDispatcher("view/term.jsp").forward(request, response);
     }
 
     /** 

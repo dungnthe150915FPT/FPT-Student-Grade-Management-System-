@@ -7,7 +7,8 @@
             <file>file:/C:/Users/Dell/Documents/GitHub/FPT-Student-Management-System/FPTStudentManagementSystem/web/CheckAttended/checkattendedforManager.jsp</file>
             <file>file:/C:/Users/Dell/Documents/GitHub/FPT-Student-Management-System/FPTStudentManagementSystem/src/java/dal/Account_ManagerDBContext.java</file>
             <file>file:/C:/Users/Dell/Documents/GitHub/FPT-Student-Management-System/FPTStudentManagementSystem/web/view/login.jsp</file>
-            <file>file:/C:/Users/Dell/Documents/GitHub/FPT-Student-Management-System/FPTStudentManagementSystem/src/java/Model/Class.java</file>
+            <file>file:/C:/Users/Dell/Documents/GitHub/FPT-Student-Management-System/FPTStudentManagementSystem/web/view/term.jsp</file>
+            <file>file:/C:/Users/Dell/Documents/GitHub/FPT-Student-Management-System/FPTStudentManagementSystem/src/java/Controller/TermController.java</file>
         </group>
     </open-files>
 </project-private>
