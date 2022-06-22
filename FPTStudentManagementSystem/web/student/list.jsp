@@ -1,10 +1,9 @@
 <%-- 
-    Document   : term
-    Created on : Jun 16, 2022, 9:33:29 PM
+    Document   : list.jsp
+    Created on : Jun 22, 2022, 10:36:06 AM
     Author     : Dell
 --%>
-
-<%@page import="Model.Term" %>
+<%@page import="Model.Student" %>
 <%@page import="java.util.ArrayList"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -12,16 +11,16 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>SELECT A TERM</title>
+        <title>LIST OF STUDENT</title>
     </head>
     <style>
         body{
-                background-image: url("https://printgo.vn/logo/truong-dai-hoc-fpt-lg415");
-                background-size: cover;
-/*                border: 1;
-                height: 1000px;
-                width: 100px;*/
-            }
+            background-image: url("https://printgo.vn/logo/truong-dai-hoc-fpt-lg415");
+            background-size: cover;
+            /*                border: 1;
+                            height: 1000px;
+                            width: 100px;*/
+        }
         *{
             margin: 0;
             padding: 0;
@@ -54,18 +53,32 @@
         }
     </style>
     <body>
-        <form action="term" method="get">
-            <h1 style="margin-top: 20px; margin-left: 20px;">Select a term</h1>
-                <c:forEach items= "${terms}" var="t"> 
-                    <div style="margin-top: 20px; margin-left: 30px;">
-                        <a href="">${t.term}</a>
-                    </div>
+        <form action="student" method="get">
+            <h1 style="margin-top: 20px; margin-left: 20px;">LIST OF STUDENTS</h1>
+            <table style="">
+                    <tr>
+                        <th>StudentID</th>
+                        <th>Name</th>
+                        <th>Gender</th>
+                        <th>Date OF Birth</th>
+                        <th>Group</th>
+                        <th>Subject</th>
+                    </tr>
+            <c:forEach items= "${students}" var="s"> 
+                    <tr>
+                        <td>${s.id}</td>
+                        <td>${s.name}</td>
+                        <td>${s.gender}</td>
+                        <td>${s.dob}</td>
+                        <td>${s.group}</td>
+                        <td>${s.subject}</td>
+                    </tr>
             </c:forEach>   
+                </table>
             <div class= "footer">
                 <p>Email : daihocfpt@fpt.edu.vn &emsp; Phone: 024 7300 1866</p>
                 <p>Address: Khu Giáo dục và Đào tạo – Khu Công nghệ cao Hòa Lạc – Km29 Đại lộ Thăng Long, H. Thạch Thất, TP. Hà Nội</p>
                 <h5>&copy; Copyright 2022. Nguyễn Tuấn Dũng</h5>
             </div>
         </form>
-    </body>
 </html>

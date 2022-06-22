@@ -12,7 +12,7 @@ public class Term {
     private int year;
     private String term;
 
-    public int getYear() {
+    public int getYear(){
         return year;
     }
 
