@@ -55,23 +55,19 @@
     <body>
         <form action="student" method="get">
             <h1 style="margin-top: 20px; margin-left: 20px;">LIST OF STUDENTS</h1>
-            <table style="">
+            <table style="width:100%; text-align: center; ">
                     <tr>
                         <th>StudentID</th>
                         <th>Name</th>
                         <th>Gender</th>
                         <th>Date OF Birth</th>
-                        <th>Group</th>
-                        <th>Subject</th>
                     </tr>
-            <c:forEach items= "${students}" var="s"> 
+                    <c:forEach items= "${requestScope.students}" var="s"> 
                     <tr>
                         <td>${s.id}</td>
-                        <td>${s.name}</td>
+                        <td>${s.displayname}</td>
                         <td>${s.gender}</td>
                         <td>${s.dob}</td>
-                        <td>${s.group}</td>
-                        <td>${s.subject}</td>
                     </tr>
             </c:forEach>   
                 </table>

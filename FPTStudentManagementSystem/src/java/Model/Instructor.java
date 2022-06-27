@@ -8,10 +8,19 @@ package Model;
  *
  * @author Dell
  */
-public class Account_Student {
+public class Instructor{
+    private String id;
     private String username;
     private String password;
     private String displayname;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getUsername() {
         return username;
@@ -36,6 +45,5 @@ public class Account_Student {
     public void setDisplayname(String displayname) {
         this.displayname = displayname;
     }
-
     
 }

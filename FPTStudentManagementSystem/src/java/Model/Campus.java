@@ -8,7 +8,7 @@ package Model;
  *
  * @author Dell
  */
-public class Term {
+public class Campus {
     private int id;
     private String name;
 
@@ -27,4 +27,6 @@ public class Term {
     public void setName(String name) {
         this.name = name;
     }
+    
+    
 }

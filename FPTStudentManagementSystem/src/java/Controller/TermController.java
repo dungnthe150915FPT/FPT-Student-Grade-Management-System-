@@ -74,7 +74,7 @@ public class TermController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-//        request.getRequestDispatcher("view/term.jsp").forward(request, response);
+        request.getRequestDispatcher("view/term.jsp").forward(request, response);
     }
 
     /** 

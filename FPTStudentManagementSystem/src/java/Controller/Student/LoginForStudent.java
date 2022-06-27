@@ -3,22 +3,23 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
 
-package Controller;
+package Controller.Student;
 
-import Model.Account_Manager;
-import dal.Account_ManagerDBContext;
+import Model.Student;
+import dal.StudentDBContext;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 
 /**
  *
  * @author Dell
  */
-public class LoginForManager extends HttpServlet {
+public class LoginForStudent extends HttpServlet {
    
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -35,10 +36,10 @@ public class LoginForManager extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet LoginForManager</title>");  
+            out.println("<title>Servlet LoginForStudent</title>");  
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet LoginForManager at " + request.getContextPath () + "</h1>");
+            out.println("<h1>Servlet LoginForStudent at " + request.getContextPath () + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -70,11 +71,11 @@ public class LoginForManager extends HttpServlet {
     throws ServletException, IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        Account_ManagerDBContext amdb = new Account_ManagerDBContext();
-        Account_Manager am = amdb.getAccount_Manager(username, password);
-        if(am == null){
+        StudentDBContext sdb = new StudentDBContext();
+        ArrayList<Student> students = sdb.getAccountStudent(username, password);
+        if(students== null){
             request.getRequestDispatcher("view/login.jsp").forward(request, response);
-        }if(am!=null){
+        }if(students!=null){
 //            response.sendRedirect("https://www.facebook.com/NgoTungSon");
             request.getRequestDispatcher("view/term.jsp").forward(request, response);
         }

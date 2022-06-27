@@ -17,20 +17,19 @@ import java.util.logging.Logger;
  * @author Dell
  */
 public class TermDBContext extends DBContext<Term> {
-
     public ArrayList<Term> getTerm(){
         ArrayList<Term> terms = new ArrayList<>();
         try {
-            String sql = "select year, term from Calendar";
-//                    + "where [year] = ? and term like '?'";
+            String sql = "select name from Term";
+//                    + "where [id] = ? and term like '?'";
             PreparedStatement stm = connection.prepareCall(sql);
-//            stm.setInt(1, year);
+//            stm.setInt(1, id);
 //            stm.setString(2, term);
             ResultSet rs = stm.executeQuery();
             while(rs.next()){
                 Term t = new Term();
-                t.setYear(rs.getInt("year"));
-                t.setTerm(rs.getString("term"));
+//                t.setId(rs.getInt("id"));
+                t.setName(rs.getString("name"));
                 terms.add(t);
             }
         } catch (SQLException ex) {

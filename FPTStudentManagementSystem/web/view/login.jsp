@@ -142,10 +142,16 @@
             <div class="content">
                 <header>Login</header>
                 <img style="max-width: 300px; height: auto; padding-bottom: 50px;" src="https://cdn.123job.vn/123job/uploads/2021/04/07/2021_04_07______42727647a64b4710268dbce238dd7a55.png" alt=""/>
-                <form action="login" method="post">
-                    <select style="margin-bottom: 30px; width: 150px; height: 50px; font-size: 25px; margin-top: -25px;" class="select">
+                <form action="loginn" method="post">
+                    <select style="margin-bottom: 30px; width: 150px; height: 50px; font-size: 25px; margin-top: -25px;" class="select_object">
                         <option value="Student" name="Student">Student</option>
                         <option value="Manager" name="Manager">Manager</option>
+                    </select>
+                    <select style="margin-bottom: 30px; width: 150px; height: 50px; font-size: 25px; margin-top: -25px;" class="select_campus">
+                        <option value="HL" name="HL">FU-Hoa Lac</option>
+                        <option value="HCM" name="HCM">FU-Ho Chi Minh</option>
+                        <option value="DN" name="DN">FU-Da Nang</option>
+                        <option value="CT" name="CT">FU-Can Tho</option>
                     </select>
                     <div class="field">
                         <span class="fa fa-user"></span>
@@ -153,7 +159,7 @@
                     </div>
                     <div class="field space">
                         <span class="fa fa-lock"></span>
-                        <input type="password" class="pass-key" required placeholder="password" name="password">
+                        <input type="password" class="pass-key" required placeholder="Password" name="password">
                     </div>
                     <div class="pass">
                         <a href="#">Forgot Password?</a>

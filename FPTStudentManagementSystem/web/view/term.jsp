@@ -55,10 +55,10 @@
     </style>
     <body>
         <form action="term" method="get">
-            <h1 style="margin-top: 20px; margin-left: 20px;">Select a term</h1>
-                <c:forEach items= "${terms}" var="t"> 
+            <h1 style="margin-top: 20px; margin-left: 20px; text-align: center;">SELECT A TERM</h1>
+                <c:forEach items= "${terms}" var="t">
                     <div style="margin-top: 20px; margin-left: 30px;">
-                        <a href="">${t.term}</a>
+                        <a href="">${t.name}</a>
                     </div>
             </c:forEach>   
             <div class= "footer">

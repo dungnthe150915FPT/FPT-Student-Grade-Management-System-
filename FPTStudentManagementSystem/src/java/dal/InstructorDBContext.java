@@ -4,6 +4,7 @@
  */
 package dal;
 
+import Model.Instructor;
 import Model.Student;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -16,41 +17,40 @@ import java.util.logging.Logger;
  *
  * @author Dell
  */
-public class StudentDBContext extends DBContext<Student> {
-    public ArrayList<Student> getStudent() {
-        ArrayList<Student> students = new ArrayList<>();
+public class InstructorDBContext extends DBContext<Instructor>{
+    public ArrayList<Instructor> getInstructor() {
+        ArrayList<Instructor> instructors = new ArrayList<>();
         try {
-            String sql = "select id, displayname, gender, dob from Student";
+            String sql = "select id, displayname, username from Student";
             PreparedStatement stm = connection.prepareCall(sql);
             ResultSet rs = stm.executeQuery();
             while (rs.next()) {
-                Student stu = new Student();
-                stu.setId(rs.getString("id"));
-                stu.setDisplayname(rs.getString("displayname"));
-                stu.setGender(rs.getBoolean("gender"));
-                stu.setDob(rs.getDate("dob"));
-                students.add(stu);
+                Instructor ins = new Instructor();
+                ins.setId(rs.getString("id"));
+                ins.setUsername(rs.getString("username"));
+                ins.setDisplayname(rs.getString("displayname"));
+                instructors.add(ins);
             }
         } catch (SQLException ex) {
             Logger.getLogger(TermDBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return students;
+        return instructors;
     }
-
-    public ArrayList<Student> getAccountStudent(String username, String password) {
-        ArrayList<Student> students = new ArrayList<>();
-        try {
-            String sql = "select username, password, displayname from Student\n"
+    
+    public ArrayList<Instructor> getAccountInstructor(String username, String password) {
+    ArrayList<Instructor> students = new ArrayList<>();
+    try {
+            String sql = "select username, password, displayname from Instructor\n"
                     + "WHERE username = ? and password = ?";
             PreparedStatement stm = connection.prepareCall(sql);
             stm.setString(1, username);
             stm.setString(2, password);
             ResultSet rs = stm.executeQuery();
-            if (rs.next()) {
-                Student stu = new Student();
-                stu.setUsername(rs.getString("username"));
-                stu.setPassword(rs.getString("password"));
-                stu.setDisplayname(rs.getString("displayname"));
+            if (rs.next()){
+                Instructor ins = new Instructor();
+                ins.setUsername(rs.getString("username"));
+                ins.setPassword(rs.getString("password"));
+                ins.setDisplayname(rs.getString("displayname"));
             }
         } catch (SQLException ex) {
             Logger.getLogger(TermDBContext.class.getName()).log(Level.SEVERE, null, ex);
@@ -59,27 +59,27 @@ public class StudentDBContext extends DBContext<Student> {
     }
 
     @Override
-    public ArrayList<Student> list() {
+    public ArrayList<Instructor> list() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public Student get(int id) {
+    public Instructor get(int id) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public void insert(Student model) {
+    public void insert(Instructor model) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public void update(Student model) {
+    public void update(Instructor model) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public void delete(Student model) {
+    public void delete(Instructor model) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
