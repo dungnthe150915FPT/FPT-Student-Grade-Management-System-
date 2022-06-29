@@ -27,38 +27,104 @@
         table{
             width: 100%;
         }
+        .footer{
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: orange;
+            color: white;
+            text-align: center;
+            margin-bottom: -20px;
+        }
+        .footer p{
+            text-align: center;
+            color: white;
+            padding: 5px 0;
+        }
+        .footer h5{
+            text-align: center;
+            color: white;
+            padding-top: 10px;
+            padding-bottom: 20px;
+        }
     </style>
     <body>
-        <div class="container">
-            <c:forEach >
-            <h4>Campus <select>
-                    <option value="HL" name="HL">FU-Hoa Lac</option>
-<!--                    <option value="HCM" name="HCM">FU-Ho Chi Minh</option>
-                    <option value="DN" name="DN">FU-Da Nang</option>
-                    <option value="CT" name="CT">FU-Can Tho</option>-->
-                </select></h4>
-            </c:forEach>
-            <h4>Lecture <select></select></h4>
-            <h1>TIME TABLE</h1>
-        </div>
-        <div>
-            <table class="table">
-                <tr>
-                <th>Week</th>
-                <th>Monday</th>
-                <th>Tuesday</th>
-                <th>Wednesday</th>
-                <th>Thursday</th>
-                <th>Friday</th>
-                <th>Saturday</th>
-                <th>Sunday</th>
-                </tr>
-<!--                <c:forEach items= "" var="">
-                <tr>
-                    <td></td>   
-                </tr>
-                </c:forEach>-->
-            </table>
-        </div>
+        <form action="timetable" method="get">
+            <div class="container">
+                <c:forEach >
+                    <h4>Campus <select>
+                            <option value="HL" name="HL">FU-Hoa Lac</option>
+                            <option value="HCM" name="HCM">FU-Ho Chi Minh</option>
+                            <option value="DN" name="DN">FU-Da Nang</option>
+                            <option value="CT" name="CT">FU-Can Tho</option>
+                        </select></h4>
+                    <h4>SELECT name from Campus where id = ? </h4>
+                </c:forEach>
+                <h4>Lecture <input type="text"><input type="submit" name="view"></h4>
+                <h4>SELECT displayname from Instructor where email like '?' and password = ?</h4>
+                <h1>TIME TABLE</h1>
+            </div>
+            <div>
+                <table class="table">
+                    <tr>
+                        <th>Week
+                    <select>
+                        <option>S</option>
+                        <option>E</option>
+                    </select>
+                        </th>
+                        <th>Monday</th>
+                        <th>Tuesday</th>
+                        <th>Wednesday</th>
+                        <th>Thursday</th>
+                        <th>Friday</th>
+                        <th>Saturday</th>
+                        <th>Sunday</th>
+                    </tr>    
+                    <tr>
+                        <td>Slot 1</td>   
+                        <td>select c.cid, c.name as 'course', r.rid, r.name as 'room', s.suid, s.[name], 
+sl.tid, sl.suid, sl.[status], sl.recordtime, 
+ts.[name] as 'slot', ts.[start], ts.[end]
+from Student_Lession sl inner join TimeSlot ts on sl.tid = ts.tid
+inner join Student s on sl.suid = s.suid
+inner join Room r on sl.rid = r.rid
+inner join Course c on sl.cid = c.cid</td>   
+                        <td></td>   
+                        <td></td>   
+                        <td></td>   
+                        <td></td>   
+                        <td></td>   
+                        <td></td>   
+                    </tr>
+                    <tr>
+                        <td>Slot 2</td>   
+                        <td>.</td>   
+                        <td>.</td>   
+                        <td>.</td>   
+                        <td>.</td>   
+                        <td>.</td>   
+                        <td>.</td>   
+                        <td>.</td>   
+                    </tr>
+                    <tr>
+                        <td>SELECT name FROM TimeSlot</td>   
+                        <td>.</td>   
+                        <td>.</td>   
+                        <td>.</td>   
+                        <td>.</td>   
+                        <td>.</td>   
+                        <td>.</td>   
+                        <td>.</td>   
+                    </tr>
+                </table>
+            </div>
+            <div class= "footer">
+                <p>Email : daihocfpt@fpt.edu.vn &emsp; Phone: 024 7300 1866</p>
+                <p>Address: Khu Giáo dục và Đào tạo – Khu Công nghệ cao Hòa Lạc – Km29 Đại lộ Thăng Long, H. Thạch Thất, TP. Hà Nội</p>
+                <h5>&copy; Copyright 2022. Nguyễn Tuấn Dũng</h5>
+            </div>
+        </form>
     </body>
 </html>

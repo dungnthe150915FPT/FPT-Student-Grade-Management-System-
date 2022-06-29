@@ -3,23 +3,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
 
-package Controller.Student;
+package Controller.Instructor;
 
-import Model.Student;
-import dal.StudentDBContext;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.util.ArrayList;
 
 /**
  *
  * @author Dell
  */
-public class LoginForStudent extends HttpServlet {
+public class AttendController extends HttpServlet {
    
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -36,10 +33,10 @@ public class LoginForStudent extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet LoginForStudent</title>");  
+            out.println("<title>Servlet AttendController</title>");  
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet LoginForStudent at " + request.getContextPath () + "</h1>");
+            out.println("<h1>Servlet AttendController at " + request.getContextPath () + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -56,8 +53,9 @@ public class LoginForStudent extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        request.getRequestDispatcher("view/login.jsp").forward(request, response);
+        request.getRequestDispatcher("instructor/attend.jsp").forward(request, response);
     } 
+
     /** 
      * Handles the HTTP <code>POST</code> method.
      * @param request servlet request
@@ -68,16 +66,7 @@ public class LoginForStudent extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        String email = request.getParameter("email");
-        String password = request.getParameter("password");
-        StudentDBContext sdb = new StudentDBContext();
-        ArrayList<Student> students = sdb.getAccountStudent(email, password);
-        if(students == null){
-            request.getRequestDispatcher("view/login.jsp").forward(request, response);
-        }if(students!=null){
-            response.sendRedirect("http://localhost:9999/FPTStudentManagementSystem/term");
-//            request.getRequestDispatcher("view/term.jsp").forward(request, response);
-        }
+        processRequest(request, response);
     }
 
     /** 

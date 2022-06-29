@@ -32,7 +32,7 @@ public abstract class DBContext<T> {
             Logger.getLogger(DBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
- 
+
 
     public abstract ArrayList<T> list();
 

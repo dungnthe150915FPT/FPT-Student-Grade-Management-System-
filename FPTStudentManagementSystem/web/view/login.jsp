@@ -155,7 +155,7 @@
                     </select>
                     <div class="field">
                         <span class="fa fa-user"></span>
-                        <input type="text" required placeholder="Email FPT" name="username">
+                        <input type="text" required placeholder="Email FPT" name="email">
                     </div>
                     <div class="field space">
                         <span class="fa fa-lock"></span>
