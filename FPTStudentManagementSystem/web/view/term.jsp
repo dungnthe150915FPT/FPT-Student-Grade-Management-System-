@@ -16,12 +16,12 @@
     </head>
     <style>
         body{
-                background-image: url("https://printgo.vn/logo/truong-dai-hoc-fpt-lg415");
-                background-size: cover;
-/*                border: 1;
-                height: 1000px;
-                width: 100px;*/
-            }
+            background-image: url("https://printgo.vn/logo/truong-dai-hoc-fpt-lg415");
+            background-size: cover;
+            /*                border: 1;
+                            height: 1000px;
+                            width: 100px;*/
+        }
         *{
             margin: 0;
             padding: 0;
@@ -56,11 +56,15 @@
     <body>
         <form action="term" method="get">
             <h1 style="margin-top: 20px; margin-left: 20px; text-align: center;">SELECT A TERM</h1>
-            <c:forEach items= "${terms}" var="t">
-                    <div style="margin-top: 20px; margin-left: 30px;">
-                            <a href="">${t.name}</a>
-                    </div>
-            </c:forEach>   
+            <table style="margin: auto; margin-top: 50px; text-align: center; width: 50%">
+                <c:forEach items= "${terms}" var="t">
+                        <tr >
+                            <td>
+                        <a href="">${t.name}</a>
+                            </td>
+                        </tr>
+                </c:forEach>
+            </table>
             <div class= "footer">
                 <p>Email : daihocfpt@fpt.edu.vn &emsp; Phone: 024 7300 1866</p>
                 <p>Address: Khu Giáo dục và Đào tạo – Khu Công nghệ cao Hòa Lạc – Km29 Đại lộ Thăng Long, H. Thạch Thất, TP. Hà Nội</p>

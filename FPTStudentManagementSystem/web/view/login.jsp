@@ -16,7 +16,7 @@
                 background-image: url("https://daihoc.fpt.edu.vn/wp-content/uploads/2019/10/nha-alpha.jpg");
                 background-size: cover;
                 border: 1;
-                height: 1000px;
+                height: 800px;
                 width: 100px;
             }
             *{
@@ -142,10 +142,10 @@
             <div class="content">
                 <header>Login</header>
                 <img style="max-width: 300px; height: auto; padding-bottom: 50px;" src="https://cdn.123job.vn/123job/uploads/2021/04/07/2021_04_07______42727647a64b4710268dbce238dd7a55.png" alt=""/>
-                <form action="loginn" method="post">
+                <form action="login" method="post">
                     <select style="margin-bottom: 30px; width: 150px; height: 50px; font-size: 25px; margin-top: -25px;" class="select_object">
                         <option value="Student" name="Student">Student</option>
-                        <option value="Manager" name="Manager">Manager</option>
+                        <option value="Instructor" name="Instructor">Instructor</option>
                     </select>
                     <select style="margin-bottom: 30px; width: 150px; height: 50px; font-size: 25px; margin-top: -25px;" class="select_campus">
                         <option value="HL" name="HL">FU-Hoa Lac</option>
@@ -155,7 +155,7 @@
                     </select>
                     <div class="field">
                         <span class="fa fa-user"></span>
-                        <input type="text" required placeholder="Email FPT" name="email">
+                        <input type="text" required placeholder="Username" name="username">
                     </div>
                     <div class="field space">
                         <span class="fa fa-lock"></span>

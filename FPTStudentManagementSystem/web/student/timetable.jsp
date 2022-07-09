@@ -20,6 +20,9 @@
         }
         table, th, td {
             border:2px solid black;
+             vertical-align: bottom;
+             border-bottom-width: 2px;
+             /*background-color: orange;*/
         }
         .container{
             text-align: center;
@@ -51,6 +54,10 @@
     </style>
     <body>
         <form action="timetable" method="get">
+            <div class="timetable-img text-center">
+                    <img src="img/content/timetable.png" alt="">
+                </div>
+            
             <div class="container">
                 <c:forEach >
                     <h4>Campus <select>
@@ -84,13 +91,15 @@
                     </tr>    
                     <tr>
                         <td>Slot 1</td>   
-                        <td>select c.cid, c.name as 'course', r.rid, r.name as 'room', s.suid, s.[name], 
+                        <td>
+<!--                            select c.cid, c.name as 'course', r.rid, r.name as 'room', s.suid, s.[name], 
 sl.tid, sl.suid, sl.[status], sl.recordtime, 
 ts.[name] as 'slot', ts.[start], ts.[end]
 from Student_Lession sl inner join TimeSlot ts on sl.tid = ts.tid
 inner join Student s on sl.suid = s.suid
 inner join Room r on sl.rid = r.rid
-inner join Course c on sl.cid = c.cid</td>   
+inner join Course c on sl.cid = c.cid-->
+                        </td>   
                         <td></td>   
                         <td></td>   
                         <td></td>   

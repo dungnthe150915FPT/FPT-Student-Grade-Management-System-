@@ -4,7 +4,7 @@
  */
 package dal;
 
-import Model.Term;
+import Model.Account;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,50 +16,50 @@ import java.util.logging.Logger;
  *
  * @author Dell
  */
-public class TermDBContext extends DBContext<Term> {
-    public ArrayList<Term> getTerm(){
-        ArrayList<Term> terms = new ArrayList<>();
+public class AccountDBContext extends DBContext<Account>{
+    public Account getAccount(String username, String password){
         try {
-            String sql = "select tename from Term";
-//                    + "where [id] = ? and term like '?'";
-            PreparedStatement stm = connection.prepareCall(sql);
-//            stm.setInt(1, id);
-//            stm.setString(2, term);
+            String sql = "select username, [password], displayname from Account\n" +
+                    "where username = ? and [password] = ?";
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setString(1, username);
+            stm.setString(2, password);
             ResultSet rs = stm.executeQuery();
-            while(rs.next()){
-                Term t = new Term();
-//                t.setId(rs.getInt("id"));
-                t.setName(rs.getString("tename"));
-                terms.add(t);
+            if(rs.next()){
+                Account acc = new Account();
+                acc.setUsername(rs.getString("username"));
+                acc.setPassword(rs.getString("password"));
+                acc.setDisplayname(rs.getString("displayname"));
+                return acc;
             }
         } catch (SQLException ex) {
-            Logger.getLogger(TermDBContext.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AccountDBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return terms;
+        return null;
     }
 
     @Override
-    public ArrayList<Term> list() {
+    public ArrayList<Account> list() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public Term get(int id) {
+    public Account get(int id) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public void insert(Term model) {
+    public void insert(Account model) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public void update(Term model) {
+    public void update(Account model) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public void delete(Term model) {
+    public void delete(Account model) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
