@@ -52,10 +52,17 @@
             padding-top: 10px;
             padding-bottom: 20px;
         }
+        .title{
+            padding-top: 30px;
+            padding-left: 30px;
+        }
     </style>
     <body>
         <form action="term" method="get">
-            <h1 style="margin-top: 20px; margin-left: 20px; text-align: center;">SELECT A TERM</h1>
+            <div class="title">
+            <h1>FPT University Academic Portal</h1>
+            </div>
+            <h3 style="margin-top: 20px; margin-left: 20px; text-align: center; color: red;">SELECT A TERM</h3>
             <table style="margin: auto; margin-top: 50px; text-align: center; width: 50%">
                 <c:forEach items= "${terms}" var="t">
                         <tr >

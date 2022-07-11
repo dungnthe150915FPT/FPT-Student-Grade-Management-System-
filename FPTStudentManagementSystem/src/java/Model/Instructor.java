@@ -10,9 +10,7 @@ package Model;
  */
 public class Instructor{
     private String id;
-    private String username;
-    private String password;
-    private String displayname;
+    private String name;
 
     public String getId() {
         return id;
@@ -22,28 +20,11 @@ public class Instructor{
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getName() {
+        return name;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setName(String name) {
+        this.name = name;
     }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getDisplayname() {
-        return displayname;
-    }
-
-    public void setDisplayname(String displayname) {
-        this.displayname = displayname;
-    }
-    
 }

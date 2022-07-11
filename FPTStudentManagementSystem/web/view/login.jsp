@@ -16,7 +16,7 @@
                 background-image: url("https://daihoc.fpt.edu.vn/wp-content/uploads/2019/10/nha-alpha.jpg");
                 background-size: cover;
                 border: 1;
-                height: 800px;
+                height: 880px;
                 width: 100px;
             }
             *{
@@ -146,6 +146,7 @@
                     <select style="margin-bottom: 30px; width: 150px; height: 50px; font-size: 25px; margin-top: -25px;" class="select_object">
                         <option value="Student" name="Student">Student</option>
                         <option value="Instructor" name="Instructor">Instructor</option>
+                        <c:forEach items= "" var="campus">
                     </select>
                     <select style="margin-bottom: 30px; width: 150px; height: 50px; font-size: 25px; margin-top: -25px;" class="select_campus">
                         <option value="HL" name="HL">FU-Hoa Lac</option>
@@ -153,6 +154,7 @@
                         <option value="DN" name="DN">FU-Da Nang</option>
                         <option value="CT" name="CT">FU-Can Tho</option>
                     </select>
+                    </c:forEach >
                     <div class="field">
                         <span class="fa fa-user"></span>
                         <input type="text" required placeholder="Username" name="username">

@@ -45,6 +45,4 @@ public class TimeSlot {
     public void setEnd(String end) {
         this.end = end;
     }
-    
-    
 }

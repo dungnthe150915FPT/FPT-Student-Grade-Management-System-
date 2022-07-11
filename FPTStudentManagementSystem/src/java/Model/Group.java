@@ -10,9 +10,10 @@ package Model;
  */
 public class Group {
     private int id;
-    private String name;
     private Course course;
     private Instructor instructor;
+    private Room room;
+    private TimeSlot timeslot;
 
     public int getId() {
         return id;
@@ -20,14 +21,6 @@ public class Group {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public Course getCourse() {
@@ -45,5 +38,22 @@ public class Group {
     public void setInstructor(Instructor instructor) {
         this.instructor = instructor;
     }
+
+    public Room getRoom() {
+        return room;
+    }
+
+    public void setRoom(Room room) {
+        this.room = room;
+    }
+
+    public TimeSlot getTimeslot() {
+        return timeslot;
+    }
+
+    public void setTimeslot(TimeSlot timeslot) {
+        this.timeslot = timeslot;
+    }
+    
     
 }
