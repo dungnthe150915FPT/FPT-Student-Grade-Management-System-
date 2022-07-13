@@ -15,7 +15,7 @@ public class Student {
     private int id;
     private String StudentID;
     private String name;
-    private boolean gender;
+    private int gender;
     private Date dob;
 
     public int getId() {
@@ -42,12 +42,20 @@ public class Student {
         this.name = name;
     }
 
-    public boolean isGender() {
+    public int getGender() {
         return gender;
     }
 
-    public void setGender(boolean gender) {
+    public void setGender(int gender) {
         this.gender = gender;
+    }
+    
+    public String Gender(){
+        if(gender == 1){
+            return "Male";
+        }else{
+            return "Female";
+        }
     }
 
     public Date getDob() {
@@ -56,5 +64,10 @@ public class Student {
 
     public void setDob(Date dob) {
         this.dob = dob;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" + "id=" + id + ", StudentID=" + StudentID + ", name=" + name + ", gender=" + gender + ", dob=" + dob + '}';
     }
 }

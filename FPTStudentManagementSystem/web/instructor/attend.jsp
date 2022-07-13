@@ -3,7 +3,8 @@
     Created on : Jun 23, 2022, 9:46:00 PM
     Author     : Dell
 --%>
-
+<%@page import="Model.Student" %>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -42,56 +43,37 @@
             padding-top: 10px;
             padding-bottom: 20px;
         }
+        .title{
+            padding-top: 30px;
+            padding-left: 30px;
+            text-align: center;
+        }
         </style>
     <body>
         <form>
-            <h1>Group ID's Student List</h1>
-        <table>
+            <h1 class="title">Group ID's Student List</h1>
+        <table style="margin: auto; margin-top: 50px; text-align: center;">
             <tr>
                 <th>Index</th>
                 <th>StudentID</th>
                 <th>Name</th>
+                <th>Gender</th>
+                <th>Date of birth</th>
                 <th>Attend</th>
-                <th>Image</th>
+                <th>Note</th>
             </tr>
+            <c:forEach items = "${students}" var="s">
             <tr>
-                <td>1</td>
-                <td>HE150915</td>
-                <td>Nguyễn Tuấn Dũng</td>
+                <td>${s.id}</td>
+                <td>${s.StudentID}</td>
+                <td>${s.name}</td>
+                <td>${s.gender}</td>
+                <td>${s.dob}</td>
                 <td><input type="checkbox">Attend</td>
-                <td></td>
+                <td><input type="text"></td>
             </tr>
-            <tr>
-                <td>2</td>
-                <td></td>
-                <td></td>
-                <td><input type="checkbox">Attend</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td></td>
-                <td></td>
-                <td><input type="checkbox">Attend</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td></td>
-                <td></td>
-                <td><input type="checkbox">Attend</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td></td>
-                <td></td>
-                <td><input type="checkbox">Attend</td>
-                <td></td>
-            </tr>
+            </c:forEach>
         </table>
-            <h4>select s.suid, s.[name], sl.[status], sl.recordtime, sl.suid from Student_Lession sl
-inner join Student s on sl.suid = s.suid</h4>
         <div class= "footer">
                 <p>Email : daihocfpt@fpt.edu.vn &emsp; Phone: 024 7300 1866</p>
                 <p>Address: Khu Giáo dục và Đào tạo – Khu Công nghệ cao Hòa Lạc – Km29 Đại lộ Thăng Long, H. Thạch Thất, TP. Hà Nội</p>

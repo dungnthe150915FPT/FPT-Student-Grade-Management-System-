@@ -60,16 +60,26 @@
     <body>
         <form action="term" method="get">
             <div class="title">
-            <h1>FPT University Academic Portal</h1>
+                <h1>FPT University Academic Portal</h1>
             </div>
+            <h3 style="padding-top: 20px; padding-left: 20px;">Hello ${sessionScope.acc.username}</h3>
             <h3 style="margin-top: 20px; margin-left: 20px; text-align: center; color: red;">SELECT A TERM</h3>
-            <table style="margin: auto; margin-top: 50px; text-align: center; width: 50%">
+            <table style="margin: auto; margin-top: 50px; text-align: center; width: 50%; ">
                 <c:forEach items= "${terms}" var="t">
-                        <tr >
+                    <c:if test= "${t.name != 'Summer 2022'}">
+                    <tr>
+                        <td>
+                            <a style="text-decoration: none;" href="">${t.name}</a>
+                        </td>
+                    </tr>
+                    </c:if>
+                    <c:if test= "${t.name == 'Summer 2022'}">
+                        <tr>
                             <td>
-                        <a href="">${t.name}</a>
+                                <a style="text-decoration: none;" href="http://localhost:9999/FPTStudentManagementSystem/timetable">${t.name}</a>
                             </td>
                         </tr>
+                    </c:if>
                 </c:forEach>
             </table>
             <div class= "footer">

@@ -17,23 +17,20 @@ import java.util.logging.Logger;
  * @author Dell
  */
 public class CampusDBContext extends DBContext<Campus>{
-public Account getAccount(String username, String password){
+public Campus getCampus(String name){
         try {
-            String sql = "select username, [password], displayname from Account\n" +
-                    "where username = ? and [password] = ?";
+            String sql = "select caname from Campus\n" +
+                    "where caname = ?";
             PreparedStatement stm = connection.prepareStatement(sql);
-            stm.setString(1, username);
-            stm.setString(2, password);
+            stm.setString(1, name);
             ResultSet rs = stm.executeQuery();
-            if(rs.next()){
-                Account acc = new Account();
-                acc.setUsername(rs.getString("username"));
-                acc.setPassword(rs.getString("password"));
-                acc.setDisplayname(rs.getString("displayname"));
-                return acc;
+            while(rs.next()){
+                Campus campus = new Campus();
+                campus.setName(rs.getString("name"));
+                return campus;
             }
         } catch (SQLException ex) {
-            Logger.getLogger(AccountDBContext.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CampusDBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
     }

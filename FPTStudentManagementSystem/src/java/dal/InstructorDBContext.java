@@ -21,14 +21,13 @@ public class InstructorDBContext extends DBContext<Instructor>{
     public ArrayList<Instructor> getInstructor() {
         ArrayList<Instructor> instructors = new ArrayList<>();
         try {
-            String sql = "select id, displayname, username from Student";
+            String sql = "select iid, name from Instructor";
             PreparedStatement stm = connection.prepareCall(sql);
             ResultSet rs = stm.executeQuery();
             while (rs.next()) {
                 Instructor ins = new Instructor();
                 ins.setId(rs.getString("id"));
                 ins.setUsername(rs.getString("username"));
-                ins.setDisplayname(rs.getString("displayname"));
                 instructors.add(ins);
             }
         } catch (SQLException ex) {
@@ -40,20 +39,18 @@ public class InstructorDBContext extends DBContext<Instructor>{
     public ArrayList<Instructor> getAccountInstructor(String username, String password) {
     ArrayList<Instructor> students = new ArrayList<>();
     try {
-            String sql = "select username, password, displayname from Instructor\n"
-                    + "WHERE username = ? and password = ?";
+            String sql = "select name from Instructor\n"
+                    + "WHERE  = ?";
             PreparedStatement stm = connection.prepareCall(sql);
             stm.setString(1, username);
             stm.setString(2, password);
             ResultSet rs = stm.executeQuery();
             if (rs.next()){
                 Instructor ins = new Instructor();
-                ins.setUsername(rs.getString("username"));
-                ins.setPassword(rs.getString("password"));
-                ins.setDisplayname(rs.getString("displayname"));
+                ins.setName(rs.getString("name"));
             }
-        } catch (SQLException ex) {
-            Logger.getLogger(TermDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex){
+            Logger.getLogger(InstructorDBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
         return students;
     }

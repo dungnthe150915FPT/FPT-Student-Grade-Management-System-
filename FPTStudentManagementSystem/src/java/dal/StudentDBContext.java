@@ -5,7 +5,6 @@
 package dal;
 
 import Model.Student;
-import Model.Student_Lession;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -18,17 +17,19 @@ import java.util.logging.Logger;
  * @author Dell
  */
 public class StudentDBContext extends DBContext<Student> {
-    public ArrayList<Student> getStudent() {
+    public ArrayList<Student> getStudent(){
         ArrayList<Student> students = new ArrayList<>();
         try {
-            String sql = "select id, name, email from Student\n";
+            String sql = "select stuid, studentID, stuname, gender, dob from Student\n";
             PreparedStatement stm = connection.prepareCall(sql);
             ResultSet rs = stm.executeQuery();
             while(rs.next()){
                 Student stu = new Student();
-                stu.setId(rs.getString("id"));
+                stu.setId(rs.getInt("id"));
+                stu.setStudentID(rs.getString("StudentID"));
                 stu.setName(rs.getString("name"));
-                stu.setEmail(rs.getString("email"));
+                stu.setGender(rs.getInt("gender"));
+                stu.setDob(rs.getDate("dob"));
                 students.add(stu);
             }
         } catch (SQLException ex) {
@@ -36,31 +37,8 @@ public class StudentDBContext extends DBContext<Student> {
         }
         return students;
     }
-
-    public ArrayList<Student> getAccountStudent(String email, String password) {
-        ArrayList<Student> students = new ArrayList<>();
-        try {
-            String sql = "select email, password, displayname from Student\n"
-                    + "WHERE email like '?' and password = ?";
-            PreparedStatement stm = connection.prepareCall(sql);
-            stm.setString(1, email);
-            stm.setString(2, password);
-            ResultSet rs = stm.executeQuery();
-            if (rs.next()) {
-                Student stu = new Student();
-                stu.setEmail(rs.getString("email"));
-                stu.setPassword(rs.getString("password"));
-                stu.setDisplayname(rs.getString("displayname"));
-                students.add(stu);
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(StudentDBContext.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return students;
-    }
-
     @Override
-    public ArrayList<Student> list() {
+    public ArrayList<Student> list(){
         ArrayList<Student> students = new ArrayList<>();
 //        try {
 //            String sql = "select email, name, id from Student\n"

@@ -5,12 +5,15 @@
 
 package Controller.Instructor;
 
+import Model.Student;
+import dal.StudentDBContext;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 
 /**
  *
@@ -66,7 +69,10 @@ public class AttendController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        processRequest(request, response);
+        StudentDBContext sdb = new StudentDBContext();
+        ArrayList<Student> students = sdb.getStudent();
+        request.setAttribute("students", students);
+        request.getRequestDispatcher("instructor/attend.jsp").forward(request, response);
     }
 
     /** 
@@ -77,5 +83,4 @@ public class AttendController extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
 }

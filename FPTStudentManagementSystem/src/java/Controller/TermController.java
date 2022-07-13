@@ -5,6 +5,7 @@
 
 package Controller;
 
+import Model.Account;
 import Model.Term;
 import dal.TermDBContext;
 import java.io.IOException;
@@ -13,6 +14,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import java.util.ArrayList;
 
 /**
@@ -56,8 +58,9 @@ public class TermController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-//        int year = Integer.parseInt(request.getParameter("year"));
 //        String term = request.getParameter("term");
+        HttpSession session = request.getSession();
+        Account acc = (Account) session.getAttribute("acc");
         TermDBContext tdb = new TermDBContext();
         ArrayList<Term> terms = tdb.getTerm();
         request.setAttribute("terms", terms);

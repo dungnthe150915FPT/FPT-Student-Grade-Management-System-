@@ -3,7 +3,8 @@
     Created on : Jun 23, 2022, 3:48:34 PM
     Author     : Dell
 --%>
-
+<%@page import="Model.Campus" %>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -59,12 +60,12 @@
                 </div>
             
             <div class="container">
-                <c:forEach >
+                <c:forEach items= "${campus}" var="campus">
                     <h4>Campus <select>
-                            <option value="HL" name="HL">FU-Hoa Lac</option>
-                            <option value="HCM" name="HCM">FU-Ho Chi Minh</option>
+                            <option value="HL" name="HL">${campus.name}</option>
+<!--                            <option value="HCM" name="HCM">FU-Ho Chi Minh</option>
                             <option value="DN" name="DN">FU-Da Nang</option>
-                            <option value="CT" name="CT">FU-Can Tho</option>
+                            <option value="CT" name="CT">FU-Can Tho</option>-->
                         </select></h4>
                     <h4>SELECT name from Campus where id = ? </h4>
                 </c:forEach>

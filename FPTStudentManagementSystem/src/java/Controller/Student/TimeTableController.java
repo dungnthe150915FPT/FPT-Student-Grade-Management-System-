@@ -5,12 +5,15 @@
 
 package Controller.Student;
 
+import Model.Campus;
+import dal.CampusDBContext;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 
 /**
  *
@@ -53,6 +56,9 @@ public class TimeTableController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
+//        CampusDBContext tdb = new CampusDBContext();
+//        ArrayList<Campus> terms = tdb.getCampus("name");
+//        request.setAttribute("terms", terms);
         request.getRequestDispatcher("student/timetable.jsp").forward(request, response);
     } 
 

@@ -12,6 +12,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import java.util.ArrayList;
 
 /**
@@ -81,6 +82,8 @@ public class LoginForStudent extends HttpServlet {
 //            response.getWriter().println("Login failed!");
         } else {
             response.sendRedirect("http://localhost:9999/FPTStudentManagementSystem/term");
+            HttpSession session = request.getSession();
+            session.setAttribute("acc", acc);
 //            request.getRequestDispatcher("view/term.jsp").forward(request, response);
 //            response.getWriter().println("Login succesful!");
         }
