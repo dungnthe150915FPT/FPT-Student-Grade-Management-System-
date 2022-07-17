@@ -72,9 +72,11 @@
             <div>
                 <table class="table">
                     <tr>
-                        <th>Week
+                        <th>Day
                             <select>
-                                <option>S</option>
+                                <c:forEach items="${timetables}" var="tt">
+                                    <option>${tt.date}</option>
+                                </c:forEach>
                             </select>
                         </th>
                         <th>Monday</th>
@@ -97,7 +99,6 @@
                                     <c:if test="${tt.status == 'Absent'}">
                                     <p style="color:red;">${tt.status}</p>
                                 </c:if>
-                                ${tt.date}
                                 ${tt.start} - ${tt.end}
                             </td>
                         </c:forEach>
