@@ -7,7 +7,9 @@ package Controller.Student;
 
 import Model.Account;
 import Model.Campus;
+import Model.TimeSlot;
 import dal.CampusDBContext;
+import dal.TimeSlotDBContext;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -36,8 +38,12 @@ public class TimeTableController extends HttpServlet {
         CampusDBContext cdb = new CampusDBContext();
         ArrayList<Campus> campuss = cdb.getCampus();
         request.setAttribute("campuss", campuss);
-//        HttpSession session = request.getSession();
-//        Account acc = (Account) session.getAttribute("acc");
+        HttpSession session = request.getSession();
+        Account acc = (Account) session.getAttribute("acc");
+        TimeSlotDBContext tdb = new TimeSlotDBContext();
+        ArrayList<TimeSlot> timeslots = tdb.getTimeSlot();
+        request.setAttribute("timeslots", timeslots);
+        
         request.getRequestDispatcher("student/timetable.jsp").forward(request, response);
     } 
 

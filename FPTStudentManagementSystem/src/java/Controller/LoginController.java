@@ -5,7 +5,9 @@
 package Controller;
 
 import Model.Account;
+import Model.Campus;
 import dal.AccountDBContext;
+import dal.CampusDBContext;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -75,15 +77,25 @@ public class LoginController extends HttpServlet {
             throws ServletException, IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
+        String role = request.getParameter("role");
         AccountDBContext adb = new AccountDBContext();
-        Account acc = adb.getAccount(username, password);
+        Account acc = adb.getAccount(username, password, role);
+        CampusDBContext cdb = new CampusDBContext();
+        ArrayList<Campus> campuss = cdb.getCampus();
+        request.setAttribute("campuss", campuss);
         if (acc == null) {
             request.getRequestDispatcher("view/login.jsp").forward(request, response);
 //            response.getWriter().println("LoginController failed!");
-        } if(acc != null){
-            response.sendRedirect("http://localhost:9999/FPTStudentManagementSystem/term1");
+        }
+        if (acc != null) {
             HttpSession session = request.getSession();
             session.setAttribute("acc", acc);
+            if (acc.getRole().equals("instructor")) {
+//                request.getRequestDispatcher("instructor/term1.jsp").forward(request, response);
+                response.sendRedirect("http://localhost:9999/FPTStudentManagementSystem/term1");
+            } else {
+                response.sendRedirect("http://localhost:9999/FPTStudentManagementSystem/term2");
+            }
 //            request.getRequestDispatcher("view/term.jsp").forward(request, response);
 //            response.getWriter().println("LoginController succesful!");
         }

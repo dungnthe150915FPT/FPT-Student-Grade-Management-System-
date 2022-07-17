@@ -30,6 +30,7 @@
             text-align: center;
         }
         table{
+            text-align: center;
             width: 100%;
         }
         .footer{
@@ -59,16 +60,17 @@
             <div class="timetable-img text-center">
                 <img src="img/content/timetable.png" alt="">
             </div>
-
             <div class="container">
-                <h4>Campus <select>
+                <h1>TIME TABLE</h1>
+                <h4 style="margin-top: 10px;">Campus <select>
                         <c:forEach items= "${campuss}" var="campus">
                             <option>${campus.caname}</option>
                         </c:forEach>
                     </select></h4>
-                <h4>Lecture <input type="text" value="${sessionScope.acc.username}"><input type="submit" value="View"></h4>
-                <h4>SELECT displayname from Instructor where email like '?' and password = ?</h4>
-                <h1>TIME TABLE</h1>
+                <c:forEach items="" var="">
+                <h4 style="margin-top: 10px; margin-bottom: 10px;">Lecture <input type="text" value="${}"><input type="submit" value="View"></h4>
+                </c:forEach>
+                <h4 style="margin-top: 10px; margin-bottom: 10px;">Student <input type="text" value="${sessionScope.acc.username}"><input type="submit" value="View"></h4>
             </div>
             <div>
                 <table class="table">
@@ -86,45 +88,12 @@
                         <th>Friday</th>
                         <th>Saturday</th>
                         <th>Sunday</th>
-                    </tr>    
+                    </tr> 
+                    <c:forEach items="${timeslots}" var="ts">
                     <tr>
-                        <td>Slot 1</td>   
-                        <td>
-                            <!--                            select c.cid, c.name as 'course', r.rid, r.name as 'room', s.suid, s.[name], 
-                            sl.tid, sl.suid, sl.[status], sl.recordtime, 
-                            ts.[name] as 'slot', ts.[start], ts.[end]
-                            from Student_Lession sl inner join TimeSlot ts on sl.tid = ts.tid
-                            inner join Student s on sl.suid = s.suid
-                            inner join Room r on sl.rid = r.rid
-                            inner join Course c on sl.cid = c.cid-->
-                        </td>   
-                        <td></td>   
-                        <td></td>   
-                        <td></td>   
-                        <td></td>   
-                        <td></td>   
-                        <td></td>   
+                        <td>${ts.tsname}</td>  
                     </tr>
-                    <tr>
-                        <td>Slot 2</td>   
-                        <td>.</td>   
-                        <td>.</td>   
-                        <td>.</td>   
-                        <td>.</td>   
-                        <td>.</td>   
-                        <td>.</td>   
-                        <td>.</td>   
-                    </tr>
-                    <tr>
-                        <td>SELECT name FROM TimeSlot</td>   
-                        <td>.</td>   
-                        <td>.</td>   
-                        <td>.</td>   
-                        <td>.</td>   
-                        <td>.</td>   
-                        <td>.</td>   
-                        <td>.</td>   
-                    </tr>
+                    </c:forEach>
                 </table>
             </div>
             <div class= "footer">

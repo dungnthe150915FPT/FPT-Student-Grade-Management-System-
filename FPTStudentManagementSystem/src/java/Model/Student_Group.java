@@ -4,14 +4,44 @@
  */
 package Model;
 
+import java.sql.Date;
+
 /**
  *
  * @author Dell
  */
 public class Student_Group {
-    private Group group;
     private Student student;
+    private Group group;
+    private Date date;
+    private int sgid;
 
+    public Student_Group() {
+    }
+
+    public Student_Group(Student student, Group group, Date date, int sgid) {
+        this.student = student;
+        this.group = group;
+        this.date = date;
+        this.sgid = sgid;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public int getSgid() {
+        return sgid;
+    }
+
+    public void setSgid(int sgid) {
+        this.sgid = sgid;
+    }
+    
     public Group getGroup(){
         return group;
     }
