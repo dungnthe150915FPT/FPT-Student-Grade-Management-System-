@@ -17,22 +17,21 @@ import java.util.logging.Logger;
  * @author Dell
  */
 public class CampusDBContext extends DBContext<Campus>{
-public Campus getCampus(String name){
+public ArrayList<Campus> getCampus(){
+    ArrayList<Campus> campuss = new ArrayList<>();
         try {
-            String sql = "select caname from Campus\n" +
-                    "where caname = ?";
+            String sql = "select caname from Campus\n";
             PreparedStatement stm = connection.prepareStatement(sql);
-            stm.setString(1, name);
             ResultSet rs = stm.executeQuery();
             while(rs.next()){
                 Campus campus = new Campus();
-                campus.setName(rs.getString("name"));
-                return campus;
+                campus.setCaname(rs.getString("caname"));
+                campuss.add(campus);
             }
         } catch (SQLException ex) {
             Logger.getLogger(CampusDBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return null;
+        return campuss;
     }
     @Override
     public ArrayList<Campus> list() {

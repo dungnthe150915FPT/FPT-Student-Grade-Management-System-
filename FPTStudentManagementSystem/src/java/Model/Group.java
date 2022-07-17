@@ -9,51 +9,32 @@ package Model;
  * @author Dell
  */
 public class Group {
-    private int id;
-    private Course course;
-    private Instructor instructor;
-    private Room room;
-    private TimeSlot timeslot;
+    private Student_Group  student_Group;
+    private String status;
+    private String note;
 
-    public int getId() {
-        return id;
+    public Student_Group getStudent_Group() {
+        return student_Group;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setStudent_Group(Student_Group student_Group) {
+        this.student_Group = student_Group;
     }
 
-    public Course getCourse() {
-        return course;
+    public String getStatus() {
+        return status;
     }
 
-    public void setCourse(Course course) {
-        this.course = course;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
-    public Instructor getInstructor() {
-        return instructor;
+    public String getNote() {
+        return note;
     }
 
-    public void setInstructor(Instructor instructor) {
-        this.instructor = instructor;
+    public void setNote(String note) {
+        this.note = note;
     }
-
-    public Room getRoom() {
-        return room;
-    }
-
-    public void setRoom(Room room) {
-        this.room = room;
-    }
-
-    public TimeSlot getTimeslot() {
-        return timeslot;
-    }
-
-    public void setTimeslot(TimeSlot timeslot) {
-        this.timeslot = timeslot;
-    }
-    
     
 }

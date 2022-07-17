@@ -9,22 +9,24 @@ package Model;
  * @author Dell
  */
 public class Room {
-    private int id;
-    private String name;
+    private int rid;
+    private String rname;
 
-    public int getId() {
-        return id;
+    public int getRid() {
+        return rid;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setRid(int rid) {
+        this.rid = rid;
     }
 
-    public String getName() {
-        return name;
+    public String getRname() {
+        return rname;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setRname(String rname) {
+        this.rname = rname;
     }
+
+    
 }

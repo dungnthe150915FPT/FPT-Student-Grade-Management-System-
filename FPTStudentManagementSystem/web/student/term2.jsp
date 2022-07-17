@@ -58,7 +58,7 @@
         }
     </style>
     <body>
-        <form action="term" method="get">
+        <form action="term2" method="get">
             <div class="title">
                 <h1>FPT University Academic Portal</h1>
             </div>

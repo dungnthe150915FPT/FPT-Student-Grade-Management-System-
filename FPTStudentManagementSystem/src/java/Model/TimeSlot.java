@@ -9,25 +9,25 @@ package Model;
  * @author Dell
  */
 public class TimeSlot {
-    private int id;
-    private String name;
+    private int tsid;
+    private String tsname;
     private String start;
     private String end;
 
-    public int getId() {
-        return id;
+    public int getTsid() {
+        return tsid;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setTsid(int tsid) {
+        this.tsid = tsid;
     }
 
-    public String getName() {
-        return name;
+    public String getTsname() {
+        return tsname;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTsname(String tsname) {
+        this.tsname = tsname;
     }
 
     public String getStart() {

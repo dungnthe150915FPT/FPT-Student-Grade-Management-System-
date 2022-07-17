@@ -9,22 +9,24 @@ package Model;
  * @author Dell
  */
 public class Campus {
-    private int id;
-    private String name;
+    private int caid;
+    private String caname;
 
-    public int getId() {
-        return id;
+    public int getCaid() {
+        return caid;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setCaid(int caid) {
+        this.caid = caid;
     }
 
-    public String getName() {
-        return name;
+    public String getCaname() {
+        return caname;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCaname(String caname) {
+        this.caname = caname;
     }
+
+    
 }

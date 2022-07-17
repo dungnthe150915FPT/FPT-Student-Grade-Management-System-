@@ -9,23 +9,34 @@ package Model;
  * @author Dell
  */
 public class Course {
-    private int id;
-    private String name;
+    private int cid;
+    private String cname;
+    private int numofslot;
 
-    public int getId() {
-        return id;
+    public int getCid() {
+        return cid;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setCid(int cid) {
+        this.cid = cid;
     }
 
-    public String getName() {
-        return name;
+    public String getCname() {
+        return cname;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCname(String cname) {
+        this.cname = cname;
     }
+
+    public int getNumofslot() {
+        return numofslot;
+    }
+
+    public void setNumofslot(int numofslot) {
+        this.numofslot = numofslot;
+    }
+
+    
     
 }

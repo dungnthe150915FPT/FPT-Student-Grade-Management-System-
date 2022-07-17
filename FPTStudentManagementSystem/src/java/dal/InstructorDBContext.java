@@ -5,7 +5,6 @@
 package dal;
 
 import Model.Instructor;
-import Model.Student;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -21,38 +20,19 @@ public class InstructorDBContext extends DBContext<Instructor>{
     public ArrayList<Instructor> getInstructor() {
         ArrayList<Instructor> instructors = new ArrayList<>();
         try {
-            String sql = "select iid, name from Instructor";
+            String sql = "select iid, iname from Instructor";
             PreparedStatement stm = connection.prepareCall(sql);
             ResultSet rs = stm.executeQuery();
             while (rs.next()) {
                 Instructor ins = new Instructor();
-                ins.setId(rs.getString("id"));
-                ins.setUsername(rs.getString("username"));
+                ins.setIid(rs.getString("iid"));
+                ins.setIname(rs.getString("iname"));
                 instructors.add(ins);
             }
         } catch (SQLException ex) {
-            Logger.getLogger(TermDBContext.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return instructors;
-    }
-    
-    public ArrayList<Instructor> getAccountInstructor(String username, String password) {
-    ArrayList<Instructor> students = new ArrayList<>();
-    try {
-            String sql = "select name from Instructor\n"
-                    + "WHERE  = ?";
-            PreparedStatement stm = connection.prepareCall(sql);
-            stm.setString(1, username);
-            stm.setString(2, password);
-            ResultSet rs = stm.executeQuery();
-            if (rs.next()){
-                Instructor ins = new Instructor();
-                ins.setName(rs.getString("name"));
-            }
-        } catch (SQLException ex){
             Logger.getLogger(InstructorDBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return students;
+        return instructors;
     }
 
     @Override

@@ -4,10 +4,9 @@
  */
 
 package Controller.Student;
-
 import Model.Account;
-import Model.Campus;
-import dal.CampusDBContext;
+import Model.Term;
+import dal.TermDBContext;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -21,7 +20,7 @@ import java.util.ArrayList;
  *
  * @author Dell
  */
-public class TimeTableController extends HttpServlet {
+public class TermForStudentController extends HttpServlet {
    
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -33,12 +32,18 @@ public class TimeTableController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        CampusDBContext cdb = new CampusDBContext();
-        ArrayList<Campus> campuss = cdb.getCampus();
-        request.setAttribute("campuss", campuss);
-//        HttpSession session = request.getSession();
-//        Account acc = (Account) session.getAttribute("acc");
-        request.getRequestDispatcher("student/timetable.jsp").forward(request, response);
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet TermController</title>");  
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet TermController at " + request.getContextPath () + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+        }
     } 
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -52,10 +57,13 @@ public class TimeTableController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-//        CampusDBContext tdb = new CampusDBContext();
-//        ArrayList<Campus> terms = tdb.getCampus("name");
-//        request.setAttribute("terms", terms);
-        processRequest(request, response);
+//        String term = request.getParameter("term");
+        HttpSession session = request.getSession();
+        Account acc = (Account) session.getAttribute("acc");
+        TermDBContext tdb = new TermDBContext();
+        ArrayList<Term> terms = tdb.getTerm();
+        request.setAttribute("terms", terms);
+        request.getRequestDispatcher("student/term2.jsp").forward(request, response);
     } 
 
     /** 
@@ -68,7 +76,7 @@ public class TimeTableController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        processRequest(request, response);
+        request.getRequestDispatcher("student/term2.jsp").forward(request, response);
     }
 
     /** 

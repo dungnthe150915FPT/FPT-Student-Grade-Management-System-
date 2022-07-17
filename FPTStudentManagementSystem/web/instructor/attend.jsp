@@ -3,6 +3,7 @@
     Created on : Jun 23, 2022, 9:46:00 PM
     Author     : Dell
 --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="Model.Student" %>
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -50,8 +51,9 @@
         }
         </style>
     <body>
-        <form>
+        <form action="attend" method="get">
             <h1 class="title">Group ID's Student List</h1>
+            <h4 style="margin-top: 20px; text-align: center">Lecture <input type="text" value="${sessionScope.acc.username}"><input type="submit" value="View"></h4>
         <table style="margin: auto; margin-top: 50px; text-align: center;">
             <tr>
                 <th>Index</th>
@@ -62,18 +64,26 @@
                 <th>Attend</th>
                 <th>Note</th>
             </tr>
-            <c:forEach items = "${students}" var="s">
+            <c:forEach items="${students}" var="s">
             <tr>
-                <td>${s.id}</td>
-                <td>${s.StudentID}</td>
-                <td>${s.name}</td>
-                <td>${s.gender}</td>
+                <td>${s.stuid}</td>
+                <td>${s.studentID}</td>
+                <td>${s.stuname}</td>
+                <c:if test="${s.gender == 1}">
+                <td>Male</td>
+                </c:if>
+                <c:if test="${s.gender == 0}">
+                <td>Female</td>
+                </c:if>
                 <td>${s.dob}</td>
                 <td><input type="checkbox">Attend</td>
                 <td><input type="text"></td>
             </tr>
             </c:forEach>
         </table>
+            <div style="text-align: center; margin-top: 30px;">
+                <input type="submit" value="Save">
+            </div>
         <div class= "footer">
                 <p>Email : daihocfpt@fpt.edu.vn &emsp; Phone: 024 7300 1866</p>
                 <p>Address: Khu Giáo dục và Đào tạo – Khu Công nghệ cao Hòa Lạc – Km29 Đại lộ Thăng Long, H. Thạch Thất, TP. Hà Nội</p>

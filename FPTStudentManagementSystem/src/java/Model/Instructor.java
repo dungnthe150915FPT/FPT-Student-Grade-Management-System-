@@ -9,22 +9,24 @@ package Model;
  * @author Dell
  */
 public class Instructor{
-    private String id;
-    private String name;
+    private String iid;
+    private String iname;
 
-    public String getId() {
-        return id;
+    public String getIid() {
+        return iid;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setIid(String iid) {
+        this.iid = iid;
     }
 
-    public String getName() {
-        return name;
+    public String getIname() {
+        return iname;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setIname(String iname) {
+        this.iname = iname;
     }
+
+
 }

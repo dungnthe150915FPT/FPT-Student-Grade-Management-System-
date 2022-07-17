@@ -5,6 +5,7 @@
 --%>
 <%@page import="Model.Campus" %>
 <%@page import="java.util.ArrayList"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -21,9 +22,9 @@
         }
         table, th, td {
             border:2px solid black;
-             vertical-align: bottom;
-             border-bottom-width: 2px;
-             /*background-color: orange;*/
+            vertical-align: bottom;
+            border-bottom-width: 2px;
+            /*background-color: orange;*/
         }
         .container{
             text-align: center;
@@ -56,20 +57,16 @@
     <body>
         <form action="timetable" method="get">
             <div class="timetable-img text-center">
-                    <img src="img/content/timetable.png" alt="">
-                </div>
-            
+                <img src="img/content/timetable.png" alt="">
+            </div>
+
             <div class="container">
-                <c:forEach items= "${campus}" var="campus">
-                    <h4>Campus <select>
-                            <option value="HL" name="HL">${campus.name}</option>
-<!--                            <option value="HCM" name="HCM">FU-Ho Chi Minh</option>
-                            <option value="DN" name="DN">FU-Da Nang</option>
-                            <option value="CT" name="CT">FU-Can Tho</option>-->
-                        </select></h4>
-                    <h4>SELECT name from Campus where id = ? </h4>
-                </c:forEach>
-                <h4>Lecture <input type="text"><input type="submit" name="view"></h4>
+                <h4>Campus <select>
+                        <c:forEach items= "${campuss}" var="campus">
+                            <option>${campus.caname}</option>
+                        </c:forEach>
+                    </select></h4>
+                <h4>Lecture <input type="text" value="${sessionScope.acc.username}"><input type="submit" value="View"></h4>
                 <h4>SELECT displayname from Instructor where email like '?' and password = ?</h4>
                 <h1>TIME TABLE</h1>
             </div>
@@ -77,10 +74,10 @@
                 <table class="table">
                     <tr>
                         <th>Week
-                    <select>
-                        <option>S</option>
-                        <option>E</option>
-                    </select>
+                            <select>
+                                <option>S</option>
+                                <option>E</option>
+                            </select>
                         </th>
                         <th>Monday</th>
                         <th>Tuesday</th>
@@ -93,13 +90,13 @@
                     <tr>
                         <td>Slot 1</td>   
                         <td>
-<!--                            select c.cid, c.name as 'course', r.rid, r.name as 'room', s.suid, s.[name], 
-sl.tid, sl.suid, sl.[status], sl.recordtime, 
-ts.[name] as 'slot', ts.[start], ts.[end]
-from Student_Lession sl inner join TimeSlot ts on sl.tid = ts.tid
-inner join Student s on sl.suid = s.suid
-inner join Room r on sl.rid = r.rid
-inner join Course c on sl.cid = c.cid-->
+                            <!--                            select c.cid, c.name as 'course', r.rid, r.name as 'room', s.suid, s.[name], 
+                            sl.tid, sl.suid, sl.[status], sl.recordtime, 
+                            ts.[name] as 'slot', ts.[start], ts.[end]
+                            from Student_Lession sl inner join TimeSlot ts on sl.tid = ts.tid
+                            inner join Student s on sl.suid = s.suid
+                            inner join Room r on sl.rid = r.rid
+                            inner join Course c on sl.cid = c.cid-->
                         </td>   
                         <td></td>   
                         <td></td>   

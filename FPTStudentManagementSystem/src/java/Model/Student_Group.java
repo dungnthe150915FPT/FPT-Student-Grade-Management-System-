@@ -12,7 +12,7 @@ public class Student_Group {
     private Group group;
     private Student student;
 
-    public Group getGroup() {
+    public Group getGroup(){
         return group;
     }
 

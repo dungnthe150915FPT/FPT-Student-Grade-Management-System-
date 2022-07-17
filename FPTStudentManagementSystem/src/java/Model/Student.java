@@ -12,34 +12,35 @@ import java.util.ArrayList;
  * @author Dell
  */
 public class Student {
-    private int id;
-    private String StudentID;
-    private String name;
+
+    private int stuid;
+    private String studentID;
+    private String stuname;
     private int gender;
     private Date dob;
 
-    public int getId() {
-        return id;
+    public int getStuid() {
+        return stuid;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setStuid(int stuid) {
+        this.stuid = stuid;
     }
 
     public String getStudentID() {
-        return StudentID;
+        return studentID;
     }
 
-    public void setStudentID(String StudentID) {
-        this.StudentID = StudentID;
+    public void setStudentID(String studentID) {
+        this.studentID = studentID;
     }
 
-    public String getName() {
-        return name;
+    public String getStuname() {
+        return stuname;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setStuname(String stuname) {
+        this.stuname = stuname;
     }
 
     public int getGender() {
@@ -49,14 +50,6 @@ public class Student {
     public void setGender(int gender) {
         this.gender = gender;
     }
-    
-    public String Gender(){
-        if(gender == 1){
-            return "Male";
-        }else{
-            return "Female";
-        }
-    }
 
     public Date getDob() {
         return dob;
@@ -64,10 +57,5 @@ public class Student {
 
     public void setDob(Date dob) {
         this.dob = dob;
-    }
-
-    @Override
-    public String toString() {
-        return "Student{" + "id=" + id + ", StudentID=" + StudentID + ", name=" + name + ", gender=" + gender + ", dob=" + dob + '}';
     }
 }
