@@ -8,7 +8,9 @@ package Controller.Student;
 import Model.Account;
 import Model.Campus;
 import Model.TimeSlot;
+import Model.TimeTable;
 import dal.CampusDBContext;
+import dal.GroupDBContext;
 import dal.TimeSlotDBContext;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -43,7 +45,9 @@ public class TimeTableController extends HttpServlet {
         TimeSlotDBContext tdb = new TimeSlotDBContext();
         ArrayList<TimeSlot> timeslots = tdb.getTimeSlot();
         request.setAttribute("timeslots", timeslots);
-        
+        GroupDBContext gdb = new GroupDBContext();
+        ArrayList<TimeTable> timetables = gdb.getInforTimeTable(acc.getAccid());
+        request.setAttribute("timetables", timetables);
         request.getRequestDispatcher("student/timetable.jsp").forward(request, response);
     } 
 

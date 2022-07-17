@@ -6,6 +6,8 @@
 package Controller.Student;
 import Model.Account;
 import Model.Term;
+import Model.TimeTable;
+import dal.GroupDBContext;
 import dal.TermDBContext;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -63,6 +65,7 @@ public class TermForStudentController extends HttpServlet {
         TermDBContext tdb = new TermDBContext();
         ArrayList<Term> terms = tdb.getTerm();
         request.setAttribute("terms", terms);
+        
         request.getRequestDispatcher("student/term2.jsp").forward(request, response);
     } 
 

@@ -31,10 +31,9 @@
         }
         table{
             text-align: center;
-            width: 100%;
+/*            width: 100%;*/
         }
         .footer{
-            position: fixed;
             left: 0;
             bottom: 0;
             width: 100%;
@@ -42,6 +41,7 @@
             color: white;
             text-align: center;
             margin-bottom: -20px;
+            margin-top: 30px;
         }
         .footer p{
             text-align: center;
@@ -67,9 +67,6 @@
                             <option>${campus.caname}</option>
                         </c:forEach>
                     </select></h4>
-                <c:forEach items="" var="">
-                <h4 style="margin-top: 10px; margin-bottom: 10px;">Lecture <input type="text" value="${}"><input type="submit" value="View"></h4>
-                </c:forEach>
                 <h4 style="margin-top: 10px; margin-bottom: 10px;">Student <input type="text" value="${sessionScope.acc.username}"><input type="submit" value="View"></h4>
             </div>
             <div>
@@ -78,7 +75,6 @@
                         <th>Week
                             <select>
                                 <option>S</option>
-                                <option>E</option>
                             </select>
                         </th>
                         <th>Monday</th>
@@ -91,7 +87,20 @@
                     </tr> 
                     <c:forEach items="${timeslots}" var="ts">
                     <tr>
-                        <td>${ts.tsname}</td>  
+                        <td>${ts.tsname}</td>
+                        <c:forEach items="${timetables}" var="tt">
+                            <td>
+                                ${tt.cname}
+                                <c:if test="${tt.status == 'Attend'}">
+                                    <p style="color:green;">${tt.status}</p>
+                                </c:if>
+                                    <c:if test="${tt.status == 'Absent'}">
+                                    <p style="color:red;">${tt.status}</p>
+                                </c:if>
+                                ${tt.date}
+                                ${tt.start} - ${tt.end}
+                            </td>
+                        </c:forEach>
                     </tr>
                     </c:forEach>
                 </table>

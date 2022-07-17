@@ -9,6 +9,7 @@ package Model;
  * @author Dell
  */
 public class Account {
+    private int accid;
     private String username;
     private String password;
     private String displayname;
@@ -18,10 +19,19 @@ public class Account {
     }
     
     public Account(String username, String password, String displayname, String role) {
+        this.accid = accid;
         this.username = username;
         this.password = password;
         this.displayname = displayname;
         this.role = role;
+    }
+
+    public int getAccid() {
+        return accid;
+    }
+
+    public void setAccid(int accid) {
+        this.accid = accid;
     }
 
     public String getRole() {
